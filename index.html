@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RETRO BOXY ARENA</title>
+  <meta name="viewport" content="width=1024, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="liability" class="neon-bg">
+    <div class="liab-box">
+      <h1 class="boxy-title rainbow">RETRO <span style="color:#ffe100;">BOXY</span> ARENA</h1>
+      <div class="big-checkbox-row">
+        <input id="liabCheck" type="checkbox" class="big-checkbox" />
+        <label for="liabCheck" class="liab-label">
+          I agree the game owners are <span class="liab-not">NOT</span> responsible for any mental or physical casualties caused by this game.
+        </label>
+      </div>
+      <button id="liabBtn" class="pixel-btn" autofocus>Continue</button>
+      <div style="margin-top:18px;font-size:0.98em;color:#ffe100cc;">&#x25A0; <span style="color:#ff4b8b;">Retro Boxy Tank Arena - v2.2</span></div>
+    </div>
+  </div>
+  <div id="loginPage" class="neon-bg" style="display:none;">
+    <div class="login-box">
+      <h2 class="boxy-title" style="font-size:1.4em;">Login</h2>
+      <input id="loginUser" maxlength="16" placeholder="Username" autocomplete="off" />
+      <input id="loginPass" type="password" maxlength="30" placeholder="Password" autocomplete="off" />
+      <div id="loginMsg"></div>
+      <button id="loginBtn" class="pixel-btn">Login / Register</button>
+      <div style="margin-top:10px;color:#ffe100;font-size:0.87em;">(Your data is saved locally. Pick any name!)</div>
+    </div>
+  </div>
+  <div id="intro" class="neon-bg" style="display:none;">
+    <div>
+      <h1 class="boxy-title rainbow">RETRO <span style="color:#ffe100;">BOXY</span> ARENA</h1>
+      <div class="loader-pixel"></div>
+      <button id="startBtn" class="pixel-btn">START GAME</button>
+      <div style="margin-top:12px;font-size:0.95em;color:#ffb184;">&lt; Best played fullscreen on desktop! &gt;</div>
+    </div>
+  </div>
+  <div id="gameWrap" style="display:none;">
+    <div id="gameContainer">
+      <div id="canvasArea">
+        <div id="coinDisplay"><span id="coinIcon">🪙</span><span id="coinAmount">0</span></div>
+        <div id="fullscreenBtn" title="Fullscreen">⛶</div>
+        <canvas id="game" width="800" height="600"></canvas>
+        <div id="healthBarWrap"><div id="healthBar"></div></div>
+        <div id="abilitySlotWrap">
+          <div id="abilityIcon"></div>
+          <div id="abilityCDBar"></div>
+        </div>
+        <div id="powerupSlotWrap">
+          <div id="powerupIcon"></div>
+          <div id="powerupBar"></div>
+        </div>
+        <button id="shopBtn" class="pixel-btn">Shop →</button>
+      </div>
+      <div id="floatingPanels">
+        <div id="instructionsPanel" class="floating-panel" style="display:none;">
+          <h2>How To Play</h2>
+          <ul>
+            <li><b>Move:</b> WASD / Arrows</li>
+            <li><b>Aim:</b> Mouse/Touch</li>
+            <li><b>Shoot:</b> Click/Tap</li>
+            <li><b>Powerup:</b> <b>X</b> or <b>USE</b></li>
+            <li><b>Skill:</b> <b>Space</b></li>
+            <li><b>Shop:</b> <b>→</b></li>
+            <li><b>Respawn:</b> <b>R</b></li>
+            <li><b>Chat:</b> <b>Enter</b></li>
+            <li><b>Fullscreen:</b> <b>F11</b> / <b>⛶</b></li>
+            <li style="color:#ffe100;"><b>Secret:</b> Press <b>;</b></li>
+          </ul>
+          <button id="closeInstr" class="pixel-btn">OK</button>
+        </div>
+        <div id="shopPanel" class="floating-panel"></div>
+        <div class="leaderboard neon">
+          <h3>Leaderboard</h3>
+          <ul id="leaderboard"></ul>
+        </div>
+      </div>
+    </div>
+    <div id="killFeed" class="neon-text"></div>
+    <div id="joystickWrap">
+      <div id="joystick"></div>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="game.js"></script>
+  <script src="main.js"></script>
+  <div style="position:fixed;bottom:3px;right:14px;font-size:0.9em;color:#ffe10088;font-family:'VT323',monospace;z-index:300;">
+    &copy; 2025 Codedebugg · v2.2
+  </div>
+</body>
+</html>

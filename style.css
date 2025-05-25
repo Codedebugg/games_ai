@@ -1,0 +1,228 @@
+body {
+  background: #181818;
+  margin: 0;
+  font-family: "Press Start 2P", "VT323", monospace;
+  overflow: hidden;
+}
+#gameWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#gameContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+#canvasArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+  min-width: 800px;
+}
+canvas {
+  background: #191e2b;
+  border-radius: 12px;
+  box-shadow: 0 0 0 7px #1a1620,0 0 48px #b55234;
+}
+#floatingPanels {
+  min-width: 280px;
+  max-width: 340px;
+  margin-left: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 12;
+}
+.floating-panel {
+  background: #232119;
+  border: 3px solid #ffe100;
+  border-radius: 14px;
+  color: #ffb184;
+  font-family: "Press Start 2P", monospace;
+  margin-bottom: 15px;
+  box-shadow: 0 0 30px #ffb18455;
+  padding: 16px 18px 16px 18px;
+  width: 260px;
+  max-width: 95vw;
+  font-size: 1em;
+}
+#instructionsPanel {
+  font-size: 0.98em;
+  background: #232a3d;
+  border: 2px solid #ff4b8b;
+  color: #ffe100;
+  margin-top: 32px;
+  margin-bottom: 20px;
+  max-width: 270px;
+  width: 240px;
+  position: relative;
+}
+#instructionsPanel h2 {
+  font-size: 1.09em;
+  margin: 0 0 7px 0;
+  color: #ff4b8b;
+}
+#instructionsPanel ul {
+  margin: 0;
+  padding-left: 16px;
+}
+#instructionsPanel button {
+  margin-top: 10px;
+  font-size: 0.98em;
+  padding: 5px 24px;
+  background: #ff4b8b;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+#shopPanel {
+  background: #232119;
+  border: 3px solid #ffe100;
+  border-radius: 14px;
+  color: #ffb184;
+  font-family: "Press Start 2P", monospace;
+  box-shadow: 0 0 30px #ffb18455;
+  padding: 14px 12px 24px 12px;
+  width: 260px;
+  max-width: 95vw;
+  position: relative;
+  display: none;
+}
+#shopPanel.show {
+  display: block;
+}
+#shopPanel h2 {
+  font-size: 1.16em;
+  color: #ff4b8b;
+  text-align: center;
+  margin-bottom: 8px;
+}
+.shop-cat {
+  font-size: 1em;
+  color: #ffe100;
+  margin-top: 13px;
+  margin-bottom: 4px;
+  letter-spacing: 1px;
+  border-bottom: 1px dotted #ff4b8b;
+  padding-bottom: 2px;
+}
+.shop-item {
+  margin: 10px 0;
+  padding: 7px 8px;
+  background: #1d1818;
+  border: 2px solid #3d5fd4;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.98em;
+  transition: background .19s, border .19s, color .19s;
+  box-shadow: 0 1px 0 #ffe10066;
+  position: relative;
+}
+.shop-item.selected {
+  border: 2px solid #ffe100;
+  background: #2a335e;
+  color: #ffe100;
+}
+.shop-item .item-price {
+  color: #ffe100;
+  font-weight: bold;
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  font-size: 0.98em;
+}
+.shop-item b {
+  font-size: 1em;
+}
+.shop-item small {
+  color: #ffb184;
+  font-size: 0.88em;
+  margin-top: 5px;
+  display: block;
+}
+#closeShop {
+  margin: 18px auto 0 auto;
+  display: block;
+  background: #ff4b8b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 18px;
+  font-size: 1em;
+  cursor: pointer;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 0 #ffe10044;
+}
+#closeShop:hover {
+  background: #ffe100;
+  color: #ff4b8b;
+}
+#shopBtn {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 13;
+  background: #ff4b8b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 35px;
+  font-size: 1.1em;
+  cursor: pointer;
+  letter-spacing: 1.5px;
+  box-shadow: 0 2px 0 #ffe10044;
+}
+#shopBtn:hover {
+  background: #ffe100;
+  color: #ff4b8b;
+}
+#coinDisplay {
+  display:flex; align-items:center; font-size:1.2em; color:#ffe100; font-family:"Press Start 2P",monospace; background:#191717; padding:3px 10px; border-radius:9px; box-shadow: 0 0 0 2px #ffe100; position: absolute; top:14px; left:18px; z-index: 3;
+}
+#coinIcon { font-size:1.2em;margin-right:5px;}
+#coinAmount { font-size:1em;letter-spacing:1px;}
+#fullscreenBtn {
+  font-size:1.3em; padding:0 8px; cursor:pointer; color:#ff4b8b; position:absolute; top:14px; right:18px; z-index:3;
+}
+#fullscreenBtn:hover { color:#ffe100;}
+#healthBarWrap { width:220px; height:18px; background:#4d1818; border:2px solid #a12020; border-radius: 7px; margin:13px 0 0 0; box-shadow:0 0 0 2px #a12020; position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%);}
+#healthBar { height:100%; background: repeating-linear-gradient(90deg,#ff2222 0 14px,#a12020 14px 20px,#ff2222 20px 28px); border-radius:6px; box-shadow:0 0 8px #ff2222;}
+#abilitySlotWrap, #powerupSlotWrap { display:flex; align-items:center; margin:8px 0 0 0; height:26px; position: absolute; bottom: 50px;}
+#abilitySlotWrap { left: 16px;}
+#powerupSlotWrap { right: 16px;}
+#abilityIcon, #powerupIcon { width:22px; height:22px; background:#d43d3d; margin-right:5px; border-radius:5px; border:1.5px solid #fff; font-size:1.1em; display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 1px #ffb184;}
+#powerupIcon { background:#232a3d; }
+#abilityCDBar, #powerupBar { height:6px; width:60px; border-radius:4px; background:#181818; border:1.5px solid #b55234; margin-left:3px; position:relative; overflow:hidden;}
+#abilityCDBar .cd-inner, #powerupBar .pwr-inner { background:#ffe100; position:absolute; left:0; top:0; height:100%; transition:width 0.1s;}
+#powerupBar .pwr-inner { background:#ff4b8b;}
+#respawnBtn { font-size:1em; margin-top:16px; position: absolute; top: 20px; right: 12px;}
+.leaderboard { background: #322c2c; border: 2px solid #b55234; border-radius: 8px; padding: 8px 12px; color: #fff; box-shadow: 0 0 10px #b55234; pointer-events: auto; font-size:1em; position: absolute; top: 12px; right: 14px;}
+.leaderboard h3 { margin: 0 0 2px 0; color: #ff4b8b; font-family: "Press Start 2P"; font-size:1em;}
+.leaderboard ul { padding: 0; margin: 0; list-style: none; }
+.leaderboard li { margin-bottom: 2px; font-size:1em;}
+#killFeed { position: absolute; top: 68px; left: 50%; transform: translateX(-50%); text-align: center; pointer-events: none; font-size: 18px; color: #ff4b8b; min-height: 18px; text-shadow: 0 0 8px #ff4b8b, 0 0 18px #ffe100; animation: killFeedAnim 1s;}
+@keyframes killFeedAnim{0%{opacity:0;}30%{opacity:1;}100%{opacity:0;}}
+#chatInput { background: #181818; border: 2.5px solid #b55234; border-radius: 7px; color: #ffe100; font-size: 16px; padding: 5px 10px; outline: none; box-shadow: 0 0 10px #ffe100; transition: border .2s, box-shadow .2s;}
+#chatInput:focus { border-color: #ffe100;}
+#chatFeed { background: #232325ef; border-radius: 8px; padding: 5px 8px; box-shadow: 0 0 10px #b55234;}
+#joystickWrap { display:none; position:absolute; left:30px; bottom:40px; z-index:200;}
+#joystick { width:80px; height:80px; border-radius:10px; background:rgba(0,255,247,0.09); border:5px solid #ff4b8b; position:relative; }
+#joystick:after { content:''; display:block; position:absolute; left:27px; top:27px; width:24px; height:24px; background:#ffe100; border-radius:7px; box-shadow:0 0 8px #ffe100;}
+.red-blur { position:fixed; left:50%; top:50%; width:800px; height:600px; z-index:100; pointer-events:none; border-radius:12px; background: radial-gradient(ellipse at center,#ff222299 60%,#ff222200 100%); opacity:0; transition:opacity .25s; transform: translate(-50%, -50%);}
+@media (max-width: 900px) {
+  #gameContainer { flex-direction: column; }
+  #canvasArea, #floatingPanels { width: 100vw; min-width: 0; margin: 0; }
+  #floatingPanels { flex-direction: row; justify-content: center; align-items: flex-start; min-width: 0; }
+  #instructionsPanel, #shopPanel { max-width: 95vw; width: 96vw; }
+  canvas { width: 96vw !important; height: auto; }
+}
